@@ -1,28 +1,28 @@
 import java.util.Scanner;
 public class T1_C1_Quiroz {
     static double leerConsumo(Scanner sc) {
-        double m3;
+        double metroscubicos;
         do {
             System.out.print("Ingrese el consumo de agua: ");
-            m3 = sc.nextDouble();
-            if (m3 < 0) {
+            metroscubicos = sc.nextDouble();
+            if (metroscubicos < 0) {
                 System.out.println("Error: el consumo no puede ser negativo.");
             }
-        } while (m3 < 0);
-        return m3;
+        } while (metroscubicos < 0);
+        return metroscubicos;
     }
-    static double calcularValor(double m3) {
+    static double calcularValor(double metroscubicos) {
         double valor;
-        if (m3 <= 15) {
-            valor = m3 * 0.40;
+        if (metroscubicos <= 15) {
+            valor = metroscubicos * 0.40;
         } else {
-            valor = (15 * 0.40) + ((m3 - 15) * 0.75);
+            valor = (15 * 0.40) + ((metroscubicos - 15) * 0.75);
         }
         return valor + 2.50;
     }
-    static void mostrarPlanilla(double m3, double valor) {
+    static void mostrarPlanilla(double metroscubicos, double valor) {
         System.out.println("\n----- PLANILLA DE AGUA -----");
-        System.out.println("Consumo: " + m3 + " m3");
+        System.out.println("Consumo: " + metroscubicos + " m3");
         System.out.printf("Total a pagar: $%.2f%n", valor);
     }
     public static void main(String[] args) {
@@ -31,4 +31,4 @@ public class T1_C1_Quiroz {
         double total = calcularValor(consumo);
         mostrarPlanilla(consumo, total);
     }
-+}
+}
